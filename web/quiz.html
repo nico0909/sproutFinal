@@ -1,0 +1,270 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	
+			<link rel="stylesheet" href="thecss.css">
+
+		 
+		<script type="text/javascript" src="thescript.js">  </script>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+	<script language="javascript">
+//COUNTDOWN
+var max_time = 5;
+var cinterval;
+var NUMB=1;
+ 
+function countdown_timer(){
+
+  // decrease timer                 
+  max_time--;
+  document.getElementById('countdown').innerHTML = max_time;
+   document.getElementById('qnumber').innerHTML = NUMB;
+   
+	
+  if(max_time == 0)
+                 {
+                    NUMB++;
+		DisplayQuestions(); 
+
+     max_time= 6;
+                 
+				}
+  
+  
+
+  if(NUMB==21)
+	  {
+	  document.getElementById('countdown').style.visibility="hidden";
+	  document.getElementById('qnumber').style.visibility="hidden";
+	  document.getElementById('startprogram').style.visibility="hidden";
+	  document.getElementById('questionsnumber').style.visibility="hidden";
+	  document.getElementById('labeltime').style.visibility="hidden";
+	  }
+            
+                  
+
+ 
+  }
+
+// 1,000 means 1 second.
+cinterval = setInterval('countdown_timer()', 1000);
+</script>
+	
+    <script>
+$(document).ready(function() { 
+            DisplayQuestions();
+
+});		
+</script>	
+	
+	</head>
+
+	<body>
+		<div id="quiz-container">
+			<div id="quiz-container">
+				<div class="quiz-header">
+					<div class="quiz-name">
+						QUIZ
+					</div>
+					<div class="quiz-score">
+						SCORE: <span id = "answer">0</span>
+					</div>
+					<div class="quiz-howtoplay">
+						<input type="button" id="btnhowtoplay" value="HOW TO PLAY"/>
+					</div>
+				</div>
+				<div class="quiz-question-cont">
+					<div class="question-counter">
+						QUESTION <span id="qnumber">1</span> <span id="questionsnumber">/ QUESTION 27</span>
+					</div>
+					<div class="question-timer">
+						<span id="labeltime">TIME:</span> <span id="countdown">5</span>
+					</div>
+					<div class="clear"></div>
+					<div class="question-question">
+					<span id="startprogram"></span>
+					
+					</div>
+					<div class="button-cont">
+						<div class="true" onclick="SubmitScoreA();">TRUE</div>
+						<div class="false" onclick="SubmitScoreB();">FALSE</div>
+					</div>
+					<span id= "check"></span>
+				</div>
+			</div>
+		</div>
+			<script>
+	function DisplayQuestions() 
+
+	{
+		
+		
+		   var Questions = new Array(20);
+	  
+
+		    
+		   Questions[0] = "Gases that trap heat above the earth are greenhouse gasses.";//true
+		   Questions[1] = "Gasses that are made by plants in green house are called greenhouse gasses";//false
+		   Questions[2] = "Cattles are one of the sources of Methane";//true
+		   Questions[3] = "Cattles are one of the sources of Methane";//true
+		   Questions[4] = "Clouds are not a source of methane";//TRUE
+		   Questions[5] = "Cattles are NOT a source of methane";//false
+		   Questions[6] = "Halocarbons is a greenhouse gas that is NOT found in nature";//TRUE
+		   Questions[7] = "Methane is a greenhouse gas that is NOT found in nature";//false
+		   Questions[8] = "A GCM is used to study the climate a GCM is a new pokemon"//false
+		   Questions[9] = "A GCM is used to study the climate a GCM is a computer program";//true
+		  Questions[10] = "OIL is NOT a fossil fuel";//false
+		   Questions[11] = "Wood is NOT a fossil fuel";//true
+	   		Questions[12] = "'Petroleum' means Rock oil";//true
+		   Questions[13] = "Using fossil fuels contributes most to global warming";//true
+		   Questions[14] = "Coal is made out of dinosaur fossils";//false
+		   Questions[15] = "Natural gas creates the lowest amount of CO2 emission";//true
+		   Questions[16] = "Using less appliances a day will lessen my carbon emission";//true
+		   Questions[17] = "I can use the used water from laundry and bathroom to water my plants";//true
+		   Questions[18] = "Eating less beef will not help the prevention of deforestation";//false
+		   Questions[19] = "Lessening TV time will help the forest"; //true
+		   Questions[20] = "Brining your own shopping bag will not help the environment ";//false
+		   Questions[21]="Putting your milk cartons to a recycling bin is better than to use it in other creative ideas";//false
+		   Questions[22]="Bringing new plastic utensils in school is better than bringing silverwares ";//false
+		   Questions[23]="Buying furr coats will affect the animals, specially the endangered";//true
+		   Questions[24]="75% of indoor home water comes from the bathroom, saving water will help the earth";//true
+		   Questions[25]="Donating follows one of the 3Rs which is Reuse";//true;
+		   Questions[26]="Planting will help the environment";//true
+		   var QCount = 0;
+		   var QNumbers= 0;
+		                 
+		      QNumbers++;
+		      
+		      
+		   while (QCount < 27) 
+		   {
+		  
+		      QNumber = Math.round(27 * Math.random());
+		      if (null != Questions[QNumber]) 
+		      {
+		      
+			document.getElementById("startprogram").innerHTML = Questions[QNumber];
+			document.getElementById("check").innerHTML = Questions[QNumber];
+			 QCount++;    
+			 Questions[QNumber] = null; // Dump this question - it's been displayed
+		      }
+		      
+		   }
+		   
+		   
+		   
+		   
+		   
+		}
+	
+	
+	
+	
+	
+	</script>
+	
+	
+	
+	<script>
+	var answer = 0;
+	function SubmitScoreA()
+	{
+	
+		
+	
+		
+		   var Questions = new Array(20);
+		   Questions[0] = "Gases that trap heat above the earth are greenhouse gasses.";//true
+		   Questions[1] = "Gasses that are made by plants in green house are called greenhouse gasses";//false
+		   Questions[2] = "Cattles are one of the sources of Methane";//true
+		   Questions[3] = "Cattles are one of the sources of Methane";//true
+		   Questions[4] = "Clouds are not a source of methane";//TRUE
+		   Questions[5] = "Cattles are NOT a source of methane";//false
+		   Questions[6] = "Halocarbons is a greenhouse gas that is NOT found in nature";//TRUE
+		   Questions[7] = "Methane is a greenhouse gas that is NOT found in nature";//false
+		   Questions[8] = "A GCM is used to study the climate a GCM is a new pokemon"//false
+		   Questions[9] = "A GCM is used to study the climate a GCM is a computer program";//true
+		  Questions[10] = "OIL is NOT a fossil fuel";//false
+		   Questions[11] = "Wood is NOT a fossil fuel";//true
+	   		Questions[12] = "'Petroleum' means Rock oil";//true
+		   Questions[13] = "Using fossil fuels contributes most to global warming";//true
+		   Questions[14] = "Coal is made out of dinosaur fossils";//false
+		   Questions[15] = "Natural gas creates the lowest amount of CO2 emission";//true
+		   Questions[16] = "Using less appliances a day will lessen my carbon emission";//true
+		   Questions[17] = "I can use the used water from laundry and bathroom to water my plants";//true
+		   Questions[18] = "Eating less beef will not help the prevention of deforestation";//false
+		   Questions[19] = "Lessening TV time will help the forest"; //true
+		   Questions[20] = "Brining your own shopping bag will not help the environment ";//false
+		   Questions[21]="Putting your milk cartons to a recycling bin is better than to use it in other creative ideas";//false
+		   Questions[22]="Bringing new plastic utensils in school is better than bringing silverwares ";//false
+		   Questions[23]="Buying furr coats will affect the animals, specially the endangered";//true
+		   Questions[24]="75% of indoor home water comes from the bathroom, saving water will help the earth";//true
+		   Questions[25]="Donating follows one of the 3Rs which is Reuse";//true;
+		   Questions[26]="Planting will help the environment";//true
+		
+		if(	 document.getElementById("startprogram").innerHTML == Questions[0] ||  document.getElementById("startprogram").innerHTML  == Questions[2]||document.getElementById("startprogram").innerHTML  == Questions[3]||document.getElementById("startprogram").innerHTML  == Questions[4]||document.getElementById("startprogram").innerHTML  == Questions[6]||document.getElementById("startprogram").innerHTML  == Questions[9]||document.getElementById("startprogram").innerHTML  == Questions[11]||document.getElementById("startprogram").innerHTML  == Questions[12]||document.getElementById("startprogram").innerHTML  == Questions[13]||document.getElementById("startprogram").innerHTML  == Questions[15]||document.getElementById("startprogram").innerHTML == Questions[16]||document.getElementById("startprogram").innerHTML == Questions[17]||document.getElementById("startprogram").innerHTML  == Questions[19]||document.getElementById("startprogram").innerHTML  == Questions[23]||document.getElementById("startprogram").innerHTML  == Questions[24]||document.getElementById("startprogram").innerHTML  == Questions[25]||document.getElementById("startprogram").innerHTML  == Questions[26])
+			{
+			document.getElementById("answer").innerHTML = answer++;
+			
+			}
+		else
+			{
+		
+			}
+		
+		}
+		
+	function SubmitScoreB()
+	{
+	
+		
+	
+		
+		   var Questions = new Array(20);
+		   Questions[0] = "Gases that trap heat above the earth are greenhouse gasses.";//true
+		   Questions[1] = "Gasses that are made by plants in green house are called greenhouse gasses";//false
+		   Questions[2] = "Cattles are one of the sources of Methane";//true
+		   Questions[3] = "Cattles are one of the sources of Methane";//true
+		   Questions[4] = "Clouds are not a source of methane";//TRUE
+		   Questions[5] = "Cattles are NOT a source of methane";//false
+		   Questions[6] = "Halocarbons is a greenhouse gas that is NOT found in nature";//TRUE
+		   Questions[7] = "Methane is a greenhouse gas that is NOT found in nature";//false
+		   Questions[8] = "A GCM is used to study the climate a GCM is a new pokemon"//false
+		   Questions[9] = "A GCM is used to study the climate a GCM is a computer program";//true
+		  Questions[10] = "OIL is NOT a fossil fuel";//false
+		   Questions[11] = "Wood is NOT a fossil fuel";//true
+	   		Questions[12] = "'Petroleum' means Rock oil";//true
+		   Questions[13] = "Using fossil fuels contributes most to global warming";//true
+		   Questions[14] = "Coal is made out of dinosaur fossils";//false
+		   Questions[15] = "Natural gas creates the lowest amount of CO2 emission";//true
+		   Questions[16] = "Using less appliances a day will lessen my carbon emission";//true
+		   Questions[17] = "I can use the used water from laundry and bathroom to water my plants";//true
+		   Questions[18] = "Eating less beef will not help the prevention of deforestation";//false
+		   Questions[19] = "Lessening TV time will help the forest"; //true
+		   Questions[20] = "Brining your own shopping bag will not help the environment ";//false
+		   Questions[21]="Putting your milk cartons to a recycling bin is better than to use it in other creative ideas";//false
+		   Questions[22]="Bringing new plastic utensils in school is better than bringing silverwares ";//false
+		   Questions[23]="Buying furr coats will affect the animals, specially the endangered";//true
+		   Questions[24]="75% of indoor home water comes from the bathroom, saving water will help the earth";//true
+		   Questions[25]="Donating follows one of the 3Rs which is Reuse";//true;
+		   Questions[26]="Planting will help the environment";//true
+		
+		   if(	 document.getElementById("startprogram").innerHTML == Questions[0] ||  document.getElementById("startprogram").innerHTML  == Questions[2]||document.getElementById("startprogram").innerHTML  == Questions[3]||document.getElementById("startprogram").innerHTML  == Questions[4]||document.getElementById("startprogram").innerHTML  == Questions[6]||document.getElementById("startprogram").innerHTML  == Questions[9]||document.getElementById("startprogram").innerHTML  == Questions[11]||document.getElementById("startprogram").innerHTML  == Questions[12]||document.getElementById("startprogram").innerHTML  == Questions[13]||document.getElementById("startprogram").innerHTML  == Questions[15]||document.getElementById("startprogram").innerHTML == Questions[16]||document.getElementById("startprogram").innerHTML == Questions[17]||document.getElementById("startprogram").innerHTML  == Questions[19]||document.getElementById("startprogram").innerHTML  == Questions[23]||document.getElementById("startprogram").innerHTML  == Questions[24]||document.getElementById("startprogram").innerHTML  == Questions[25]||document.getElementById("startprogram").innerHTML  == Questions[26])
+			{
+			
+			}
+		else
+			{
+			document.getElementById("answer").innerHTML = answer++;
+			
+			}
+		
+		}
+	
+	
+	</script>
+		
+		
+	</body>
+</html>
